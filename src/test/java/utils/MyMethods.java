@@ -31,6 +31,7 @@ public class MyMethods implements Locators {
         while (!$(locator).isDisplayed())
             executeJavaScript("scrollBy(0, 10);");
         $(locator).scrollIntoView(false).shouldBe(appear);
+
     }
 
 
@@ -136,6 +137,7 @@ public class MyMethods implements Locators {
      * @param menuLinks menu link as enum (MenuLinks)
      */
     public void navigateOnMenuTo(MenuLinks menuLinks){
+        Selenide.executeJavaScript("window.scrollBy(0, 300);");
         String langStr = getSiteLanguage();
         int lang = langStr.equals("EN") ? 1 : langStr.equals("TR") ? 2 : 0 ;
         if (isMobileMode())

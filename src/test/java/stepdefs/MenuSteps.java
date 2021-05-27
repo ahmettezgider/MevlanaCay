@@ -1,9 +1,6 @@
 package stepdefs;
 
-import com.codeborne.selenide.AssertionMode;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebDriverRunner;
+import com.codeborne.selenide.*;
 import com.codeborne.selenide.testng.SoftAsserts;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -50,8 +47,9 @@ public class MenuSteps extends MyMethods implements Locators {
     @Then("main menu should work properly")
     public void mainMenuShouldWorkProperly() {
         boolean mobileMode = $(responsiveMenuToggle).isDisplayed();
-        if (mobileMode)
+        if (mobileMode) {
             $(responsiveMenuToggle).click();
+        }
 
         for (SelenideElement e: $$(mainMenu)){
             e.hover();

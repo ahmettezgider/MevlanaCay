@@ -10,6 +10,8 @@ public interface Locators {
     String urlTr = "https://www.mevlanacay.de/tr/";
 
 
+    By headerEmailSubmissionEmail = By.cssSelector("div.mctb-bar input[name='email']");
+    By headerEmailSubmissionSubmit = By.cssSelector("div.mctb-bar input[type='submit']");
     // Header and Footer Selectors
     By slides = By.cssSelector("rs-slides rs-slide");
     By logo = By.cssSelector("div.logo");
